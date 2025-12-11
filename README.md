@@ -69,7 +69,7 @@ sudo firewall-cmd --reload
 
 1.  Clone this repository:
     ```bash
-    git clone https://github.com/yourusername/Storeroom-Request.git
+    git clone https://github.com/GabrielGB1999/Storeroom-Request.git
     ```
 
 2.  Build and start the containers:
