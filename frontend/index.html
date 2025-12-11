@@ -13,49 +13,49 @@
 
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-title">Gestor de Solicitudes de pañol</div>
+        <div class="nav-title">Storeroom Request Manager</div>
         <div class="nav-links">
-            <button onclick="showWorkerSection()">Alumnos</button>
-            <button onclick="showStorekeeperLogin()">Pañolero</button>
+            <button onclick="showWorkerSection()">Worker</button>
+            <button onclick="showStorekeeperLogin()">StoreKeeper</button>
         </div>
     </nav>
 
     <!-- Worker Section -->
     <div id="worker-section" class="container active">
         <div class="card">
-            <h2>Nueva Solicitud de Herramientas</h2>
+            <h2>New Request</h2>
             <div class="input-group">
                 <input type="text" id="w-name" placeholder=" " required>
-                <label>Nombre y Apellido</label>
+                <label>Full Name</label>
             </div>
             <div class="input-group">
                 <input type="text" id="w-course" placeholder=" " required>
-                <label>Curso</label>
+                <label>Department/Section</label>
             </div>
             <div class="input-group">
                 <input type="text" id="w-supervisor" placeholder=" " required>
-                <label>Profesor</label>
+                <label>Supervisor</label>
             </div>
 
             <div class="tool-adder">
                 <div class="input-group">
                     <input type="text" id="w-tool-input" placeholder=" ">
-                    <label>Herramienta</label>
+                    <label>Tools</label>
                 </div>
-                <button class="btn-secondary" onclick="addTool()">Añadir</button>
+                <button class="btn-secondary" onclick="addTool()">Add</button>
             </div>
 
             <ul id="tool-list"></ul>
 
-            <button class="btn-primary" onclick="submitRequest()">Enviar Solicitud</button>
+            <button class="btn-primary" onclick="submitRequest()">Send Request</button>
         </div>
         
         <!-- Status Overlay for Worker -->
         <div id="worker-status-overlay" class="overlay hidden">
             <div class="status-box">
-                <h2 id="status-message">Solicitud Enviada</h2>
+                <h2 id="status-message">Request Sent</h2>
                 <div class="loader"></div>
-                <p>Por favor espere el llamado del pañolero por este medio</p>
+                <p>Please, wait for the storekeeper call in this window</p>
                 <button id="reset-worker-btn" class="hidden btn-secondary" onclick="resetWorker()">New Request</button>
             </div>
         </div>
@@ -64,12 +64,12 @@
     <!-- Storekeeper Login -->
     <div id="login-section" class="container hidden">
         <div class="card login-card">
-            <h2>Acceso Pañolero</h2>
+            <h2>StoreKeeper Access</h2>
             <div class="input-group">
                 <input type="password" id="sk-password" placeholder=" ">
-                <label>Contraseña</label>
+                <label>Password</label>
             </div>
-            <button class="btn-primary" onclick="loginStorekeeper()">Ingresar</button>
+            <button class="btn-primary" onclick="loginStorekeeper()">Log In</button>
             <p id="login-error" class="error-msg"></p>
         </div>
     </div>
@@ -77,8 +77,8 @@
     <!-- Storekeeper Dashboard -->
     <div id="storekeeper-dashboard" class="container hidden">
         <div class="dashboard-header">
-            <h2>Solicitudes Activas</h2>
-            <button class="btn-secondary" onclick="logoutStorekeeper()">Salir</button>
+            <h2>Active Request</h2>
+            <button class="btn-secondary" onclick="logoutStorekeeper()">Exit</button>
         </div>
         <div id="requests-grid" class="grid">
             <!-- Requests will be injected here -->
@@ -86,7 +86,7 @@
     </div>
 	
 	 <div class="copyright-text">
-        	&copy; Creado e implementado por prof. Gabriel Bessi
+        	&copy; Created by Gabriel1999
     </div>
 
     <script src="script.js"></script>
