@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storeroom Manager</title>
+    <!-- Material Design Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-title">Gestor de Solicitudes de pañol</div>
+        <div class="nav-links">
+            <button onclick="showWorkerSection()">Alumnos</button>
+            <button onclick="showStorekeeperLogin()">Pañolero</button>
+        </div>
+    </nav>
+
+    <!-- Worker Section -->
+    <div id="worker-section" class="container active">
+        <div class="card">
+            <h2>Nueva Solicitud de Herramientas</h2>
+            <div class="input-group">
+                <input type="text" id="w-name" placeholder=" " required>
+                <label>Nombre y Apellido</label>
+            </div>
+            <div class="input-group">
+                <input type="text" id="w-course" placeholder=" " required>
+                <label>Curso</label>
+            </div>
+            <div class="input-group">
+                <input type="text" id="w-supervisor" placeholder=" " required>
+                <label>Profesor</label>
+            </div>
+
+            <div class="tool-adder">
+                <div class="input-group">
+                    <input type="text" id="w-tool-input" placeholder=" ">
+                    <label>Herramienta</label>
+                </div>
+                <button class="btn-secondary" onclick="addTool()">Añadir</button>
+            </div>
+
+            <ul id="tool-list"></ul>
+
+            <button class="btn-primary" onclick="submitRequest()">Enviar Solicitud</button>
+        </div>
+        
+        <!-- Status Overlay for Worker -->
+        <div id="worker-status-overlay" class="overlay hidden">
+            <div class="status-box">
+                <h2 id="status-message">Solicitud Enviada</h2>
+                <div class="loader"></div>
+                <p>Por favor espere el llamado del pañolero por este medio</p>
+                <button id="reset-worker-btn" class="hidden btn-secondary" onclick="resetWorker()">New Request</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Storekeeper Login -->
+    <div id="login-section" class="container hidden">
+        <div class="card login-card">
+            <h2>Acceso Pañolero</h2>
+            <div class="input-group">
+                <input type="password" id="sk-password" placeholder=" ">
+                <label>Contraseña</label>
+            </div>
+            <button class="btn-primary" onclick="loginStorekeeper()">Ingresar</button>
+            <p id="login-error" class="error-msg"></p>
+        </div>
+    </div>
+
+    <!-- Storekeeper Dashboard -->
+    <div id="storekeeper-dashboard" class="container hidden">
+        <div class="dashboard-header">
+            <h2>Solicitudes Activas</h2>
+            <button class="btn-secondary" onclick="logoutStorekeeper()">Salir</button>
+        </div>
+        <div id="requests-grid" class="grid">
+            <!-- Requests will be injected here -->
+        </div>
+    </div>
+	
+	 <div class="copyright-text">
+        	&copy; Creado e implementado por prof. Gabriel Bessi
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
