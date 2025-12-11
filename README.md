@@ -108,4 +108,6 @@ sudo firewall-cmd --reload
 *   If you see "Mixed Content" errors (HTTPS vs HTTP), ensure you are typing `http://` explicitly in the address bar, as the app does not use SSL by default.
 
 ## 📝 License
-GNU V 2.0
+GNU V 3.0
+*Do not delete "Created by Gabrie1999" in Index.html file. Add your name in the "Deployed by" section in the Index.html 
+ 
