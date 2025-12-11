@@ -1,4 +1,4 @@
-const API_URL = "http://192.168.10.100:6868"; // Ensure this matches your backend port
+const API_URL = "http://localhost:6868"; // Ensure this matches your backend port
 let toolsArray = [];
 let currentWorkerReqId = null;
 let pollInterval = null;
@@ -50,7 +50,7 @@ async function submitRequest() {
     }
 
     if (!name || !course || !supervisor || toolsArray.length === 0) {
-        alert("Por favor, llene todos los campos y añada una herramienta");
+        alert("Please, fill all field and request a tool");
         return;
     }
 
@@ -76,7 +76,7 @@ async function submitRequest() {
         console.log("Request Success:", data);
         currentWorkerReqId = data.id;
 
-        statusMsg.innerText = "Solicitud Enviada";
+        statusMsg.innerText = "Request Sent";
         statusMsg.style.color = "var(--primary)";
         
         // Start polling
@@ -85,9 +85,9 @@ async function submitRequest() {
 
     } catch (error) {
         console.error("Fetch error:", error);
-        statusMsg.innerText = "Conexión fallida";
+        statusMsg.innerText = "failed to connect";
         statusMsg.style.color = "red";
-        alert("No se pudo conectar al servidor");
+        alert("could not connect to server, Check WiFi connection");
         // Hide overlay so they can try again
         setTimeout(() => overlay.classList.add('hidden'), 2000);
     }
@@ -105,10 +105,10 @@ async function checkWorkerStatus() {
         const resetBtn = document.getElementById('reset-worker-btn');
 
         if (data.status === 'ready') {
-            statusMsg.innerText = "VENGA A RETIRAR SU PEDIDO";
+            statusMsg.innerText = "YOUR ORDER IS READY";
             statusMsg.style.color = "var(--secondary)"; 
         } else if (data.status === 'fulfilled') {
-            statusMsg.innerText = "SU PEDIDO FUE RETIRADO";
+            statusMsg.innerText = "ORDER RETIRED";
             statusMsg.style.color = "green";
             loader.style.display = 'none';
             resetBtn.classList.remove('hidden');
