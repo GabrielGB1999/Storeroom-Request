@@ -135,7 +135,7 @@ function resetWorker() {
 // --- Storekeeper Logic ---
 function loginStorekeeper() {
     const pass = document.getElementById('sk-password').value;
-    if (pass === "panoladmin") { 
+    if (pass === "admin123") { 
         document.getElementById('login-section').classList.add('hidden');
         document.getElementById('storekeeper-dashboard').classList.remove('hidden');
         fetchRequests();
