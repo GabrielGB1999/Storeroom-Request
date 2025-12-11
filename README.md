@@ -38,7 +38,12 @@ Before running the application, you **must** configure the server IP address so 
     ```javascript
     const API_URL = "http://192.168.1.100:6868";
     ```
-
+### 2. Configure Storekeeper password ####
+* Go to line 138 in /frontend/script.js
+* ``` javascript
+  if (pass === "admin123") {
+  ```
+* Change "admin123" for your desired password
 ### 2. Configure Firewall (If running on Linux Server)
 The application uses two ports:
 *   **6767**: Frontend (User Interface)
