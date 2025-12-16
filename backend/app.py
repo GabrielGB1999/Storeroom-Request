@@ -63,4 +63,4 @@ def check_status(req_id):
 
 if __name__ == '__main__':
     # Ensure it listens on all interfaces
-    app.run(host='0.0.0.0', port=6868, debug=True)
+    app.run(host='0.0.0.0', port=6868, debug=False)
